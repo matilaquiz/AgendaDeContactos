@@ -60,7 +60,19 @@ def eliminarContacto(agenda):
         print(f"\n El contacto {nombre} no se encuentra en  esta agenda")
 
 
-# def mostararTodosContactos(agenda):
+def mostrarTodosContactos(agenda):
+    print("\n----- LISTA DE CONTACTOS -----")
+    if not agenda:
+        print("La agenda esta vacia")
+    else:
+        for nombre,info in agenda.items():
+            print(f"Nombre de contacto: {nombre}")
+            print(f"Telefono de {nombre}: {info["telefono"]}")
+            print(f"Mail de {nombre}: {info["mail"]}")
+            print("-------------------------------------------")
+            
+
+
 def agendaContactos():
     agenda = {}
     while True:
@@ -72,7 +84,7 @@ def agendaContactos():
         elif opcion == 3:
             eliminarContacto(agenda)
         elif opcion == 4:
-            #           mostrarTodosContactos(agenda)
+            mostrarTodosContactos(agenda)
             pass
         elif opcion == 5:
             print("Estas saliendo de la aplicacion")
